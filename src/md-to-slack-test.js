@@ -1,7 +1,6 @@
 const md = `
 ## 1.21.0 (2016-06-15)
 
-
 #### Bug Fixes
 
 * **test:** testing slack publish bot ([93f6e99f](https://github.com/bahmutov/stitch-notify/commit/93f6e99f))

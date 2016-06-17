@@ -11,7 +11,8 @@
     "start": "node src/index.js",
     "lint": "standard --verbose src/*.js",
     "format": "standard-format -w src/*.js",
-    "pretest": "npm run format && npm run lint"
+    "pretest": "npm run format && npm run lint",
+    "commit": "commit-wizard"
   },
   "files": [
     "*.js"
@@ -39,7 +40,18 @@
     "slackify-html": "^1.0.1"
   },
   "devDependencies": {
+    "pre-git": "^3.9.1",
     "standard": "^7.1.2",
     "standard-format": "^2.2.1"
+  },
+  "config": {
+    "pre-git": {
+      "commit-msg": "simple",
+      "pre-commit": [],
+      "pre-push": [],
+      "post-commit": [],
+      "post-checkout": [],
+      "post-merge": []
+    }
   }
 }
