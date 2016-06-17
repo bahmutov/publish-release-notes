@@ -1,6 +1,6 @@
 {
   "name": "publish-release-notes",
-  "version": "1.0.0",
+  "version": "0.0.0-semantic-release",
   "description": "NPM hook and GitHub release notes published to Slack",
   "main": "src/index.js",
   "bin": {
@@ -13,11 +13,20 @@
     "format": "standard-format -w src/*.js",
     "pretest": "npm run format && npm run lint",
     "commit": "commit-wizard",
-    "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";"
+    "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "files": [
     "src"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bahmutov/publish-release-notes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bahmutov/publish-release-notes/issues"
+  },
+  "homepage": "https://github.com/bahmutov/publish-release-notes#readme",
   "keywords": [
     "npm",
     "hook",
@@ -43,16 +52,25 @@
   "devDependencies": {
     "pre-git": "^3.9.1",
     "standard": "^7.1.2",
-    "standard-format": "^2.2.1"
+    "standard-format": "^2.2.1",
+    "semantic-release": "^4.3.5"
   },
   "config": {
     "pre-git": {
       "commit-msg": "simple",
-      "pre-commit": ["npm test"],
-      "pre-push": ["npm run size"],
+      "pre-commit": [
+        "npm test"
+      ],
+      "pre-push": [
+        "npm run size"
+      ],
       "post-commit": [],
       "post-checkout": [],
       "post-merge": []
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bahmutov/publish-release-notes.git"
   }
 }
