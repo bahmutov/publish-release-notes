@@ -11,6 +11,16 @@ Read [Publish release notes to Slack][blog post] blog post.
 
 [blog post]: https://glebbahmutov.com/blog/publish-release-notes-to-slack/
 
+Needs NPM, GitHub and Slack tokens as environment variables
+
+```text
+SLACK_API_TOKEN=xoxp-...
+SLACK_CHANNEL=C1...
+SHARED_SECRET=no one knows what it's like...
+GITHUB_USERNAME=bahmutov
+GITHUB_TOKEN=bb45...
+```
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2016
