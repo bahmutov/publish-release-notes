@@ -12,10 +12,11 @@
     "lint": "standard --verbose src/*.js",
     "format": "standard-format -w src/*.js",
     "pretest": "npm run format && npm run lint",
-    "commit": "commit-wizard"
+    "commit": "commit-wizard",
+    "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";"
   },
   "files": [
-    "*.js"
+    "src"
   ],
   "keywords": [
     "npm",
@@ -47,8 +48,8 @@
   "config": {
     "pre-git": {
       "commit-msg": "simple",
-      "pre-commit": [],
-      "pre-push": [],
+      "pre-commit": ["npm test"],
+      "pre-push": ["npm run size"],
       "post-commit": [],
       "post-checkout": [],
       "post-merge": []
